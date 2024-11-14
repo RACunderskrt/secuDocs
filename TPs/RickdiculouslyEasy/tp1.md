@@ -2,7 +2,7 @@
 
 ---
 
-Voici le résumé et les résultats de mon expérience sur l'exercice RickdiculouslyEasy présent sur VulHub.
+L'objectif de cet exercice est de trouver les 8 ou 9 flags présents dans la machine cible.
 J'ai utilisé un VM Kali en tant que machine hôte.
 
 ## Sommaire
