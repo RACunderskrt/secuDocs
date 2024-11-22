@@ -5,4 +5,4 @@
 >> [TD 3. SQLMap](./TDs/SQLMap/td3.md) <br>
 > ## TP
 >> [TP 1. RickdiculouslyEasy](./TPs/RickdiculouslyEasy/tp1.md) <br>
->> [TP 2. RickdiculouslyEasy](./TPs/VulnCMS/tp2.md) <br>
+>> [TP 2. VulnCMS](./TPs/VulnCMS/tp2.md) <br>
