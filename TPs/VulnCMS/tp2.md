@@ -24,7 +24,7 @@ Comme d'habitude, on commence par un peu de reconnaissance.
 
 `sudo netdiscovery 192.168.1.0`
 
-![netdisco](/home/rac/Documents/CyberSecu/TPs/tp2/images/netdisco.png)
+![netdisco](./images/netdisco.png)
 
 Notre cible est la machine avec l'adresse ip **192.168.1.58**.
 
@@ -32,7 +32,7 @@ On vérifie l'adresse de notre machine hôte.
 
 `ip a`
 
-![ipa](/home/rac/Documents/CyberSecu/TPs/tp2/images/ipa.png)
+![ipa](./images/ipa.png)
 
 L'adresse de notre machine est **192.168.1.51**. 
 
@@ -40,7 +40,7 @@ Voyons voir quelle sont les ports ouverts sur la machine cible. L'argument -p- p
 
 `sudo nmap -p- 192.168.1.58`
 
-![nmap](/home/rac/Documents/CyberSecu/TPs/tp2/images/nmap-p-.png)
+![nmap](./images/nmap-p-.png)
 
 Il y a 5 services sur notre machine cible, explorons les pour voir s'il n'y a rien d'intéressant pour accéder a nos flags.
 
@@ -50,13 +50,13 @@ Il y a un service http ouvert sur le port 80.
 
 Essayons de voir ce que ça donne via un navigateur web.
 
-![navweb80](/home/rac/Documents/CyberSecu/TPs/tp2/images/siteweb80.png)
+![navweb80](./images/siteweb80.png)
 
 C'est un blog des plus classique.
 
 En essayant de rajouter un paramètre dans l'url, j'ai appris que c'est un server web sous nginx.
 
-![nginxerr](/home/rac/Documents/CyberSecu/TPs/tp2/images/nginxErr.png)
+![nginxerr](./images/nginxErr.png)
 
 À voir si cela va nous servir plus tard.
 
@@ -64,21 +64,21 @@ Ensuite, sur les services web, il y a plusieurs outils qui sont à notre disposi
 
 `nikto -h 192.168.1.58 80`
 
-![nikto](/home/rac/Documents/CyberSecu/TPs/tp2/images/nikto80.png)
+![nikto](./images/nikto80.png)
 
 Il n'y a rien qui me saute aux yeux donc je passe à dirb.
 
 `sudo dirb http://192.168.1.58`
 
-![dirb80](/home/rac/Documents/CyberSecu/TPs/tp2/images/dirb80.png)
+![dirb80](./images/dirb80.png)
 
 Il y a 2 fichiers de "cachés" sur ce port. Le premier `index.html` est uniquement la page précédente sans CSS. Alors que robots.txt :
 
-![robotstxt](/home/rac/Documents/CyberSecu/TPs/tp2/images/robot.png)
+![robotstxt](./images/robot.png)
 
 Tiens, un `/about` est mentionné, voyons si cette page existe.
 
-![about80](/home/rac/Documents/CyberSecu/TPs/tp2/images/abouthtml.png)
+![about80](./images/abouthtml.png)
 
 Il s'y trouve un texte quelque peu cryptique. Peut-être qu'il contient des indices, mais ne sachant pas l'interpréter, passons à un autre port.
 
@@ -88,19 +88,19 @@ Il s'y trouve un texte quelque peu cryptique. Peut-être qu'il contient des indi
 
 En utilisant un navigateur, on apprend que c'est un service web qui tourne sur ce port et plus précisément, c'est un site WordPress.
 
-![navweb5000](/home/rac/Documents/CyberSecu/TPs/tp2/images/nav5000.png)
+![navweb5000](./images/nav5000.png)
 
 Il existe un outil permettant de scanner les sites utilisant le CMS WordPress.
 
 `sudo wpscan --url http://192.168.1.58:5000`
 
-![wpscan](/home/rac/Documents/CyberSecu/TPs/tp2/images/wpscan5000.png)
+![wpscan](./images/wpscan5000.png)
 
 WPScan propose plusieurs options, comme de pouvoir lister les utilisateurs liés au site.
 
 `sudo wpscan --url http://192.168.1.58:5000 --enumerate u`
 
-![wpscanu](/home/rac/Documents/CyberSecu/TPs/tp2/images/wpscan5000u.png)
+![wpscanu](./images/wpscan5000u.png)
 
 Il a bien trouvé un utilisateur du nom de "wordpress_admin".
 
@@ -108,7 +108,7 @@ On peut maintenant, grâce à WPScan, essayer de trouver son mot de passe par br
 
 `sudo wpscan --url http://192.168.1.58:500 --passwords /usr/share/wordlists/rockyou.txt.gz --usernames wordpress_admin`
 
-![wpscanp](/home/rac/Documents/CyberSecu/TPs/tp2/images/wpscan5000p.png)
+![wpscanp](./images/wpscan5000p.png)
 
 Cependant, cette méthode n'a pas été concluante.
 
@@ -116,7 +116,7 @@ Essayons dirb à présent.
 
 `sudo dirb http://192.168.1.58:5000`
 
-![dirb5000](/home/rac/Documents/CyberSecu/TPs/tp2/images/dirb5000.png)
+![dirb5000](./images/dirb5000.png)
 
 Alors la liste retournée est longue comme mon bras, donc on ne peut la voir d'un seul coup.
 
@@ -124,19 +124,19 @@ Essayons de se balader avec ces différents résultats. Le premier dossier trouv
 
 Mais que se passe-t-il si l'on rentre un autre nombre tel que `/1` ?
 
-![webshell](/home/rac/Documents/CyberSecu/TPs/tp2/images/webshell.png)
+![webshell](./images/webshell.png)
 
 Ça, c'est intéressant. Tout comme dans le tp précédent, essayons d'afficher les users de la machine cible.
 
 `cat /etc/passwd`
 
-![catpwd](/home/rac/Documents/CyberSecu/TPs/tp2/images/catetcpasswd.png)
+![catpwd](./images/catetcpasswd.png)
 
 Il y a 3 users qui nous sautent aux yeux : elliot, ghost et tyrell.
 
 Pour vérifier ce pressentiment, j'affiche le contenu de `/home`.
 
-![wslshome](/home/rac/Documents/CyberSecu/TPs/tp2/images/wblshome.png)
+![wslshome](./images/wblshome.png)
 
 Ok, ce sont bien nos users. On retient ça pour plus tard.
 
@@ -150,7 +150,7 @@ Pour ce faire, on utilise l'outil Hydra. Le paramètre `-l` définie un username
 
 `hydra -l elliot -P /usr/share/wordlists/metasploit/unix_passwords.txt -t 6 ssh://192.168.1.58`
 
-![hydraelliot](/home/rac/Documents/CyberSecu/TPs/tp2/images/hydraelliot.png)
+![hydraelliot](./images/hydraelliot.png)
 
 On fait ça sur tous les utilisateurs, mais cela n'a pas été concluant.
 
