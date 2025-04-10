@@ -1,10 +1,10 @@
 ﻿# TNI
 ### 1. Entropie d'un texte
-1. J'ai utilisé un programme python afin de compter le nombre d'occurence de chaque caractères présents dans le fichier `exemple1.txt`.
-Pour se faire, j'ai utilisé 3 dictionnaires (Map) pour :
+1. J'ai utilisé un programme python afin de compter le nombre d'occurrence de chaque caractère présents dans le fichier `exemple1.txt`.
+Pour ce faire, j'ai utilisé 3 dictionnaires (Map) pour :
 	- Stocker les lettres minuscules
 	- Stocker les lettres majuscules
-	- Stocker tous les caractères "spéciaux" présents dans le texte (lettres avec accent, ponctuations...)
+	- Stocker tous les caractères "spéciaux" présents dans le texte (lettres avec accent, ponctuation...)
 ___
 exemple de résultat : 
 ```js
@@ -13,7 +13,7 @@ majuscule : {'A': 7, 'B': 3, 'C': 19, 'D': 10, 'E': 6, 'F': 7, 'G': 0, 'H': 0, '
 autre : {' ': 3971, '.': 224, '’': 316, ';': 60, 'â': 12, ',': 267, 'è': 42, 'û': 13, 'é': 321, '\n': 369, 'à': 84, '-': 19, ':': 14, '2': 2, '1': 2, 'ù': 13, 'ê': 46, 'î': 8, 'É': 3, 'ô': 6, 'À': 4, 'ç': 4, '?': 5, 'ï': 2, '!': 1, '«': 4, '»': 4, '–': 1}
 ```
 ___
-2. J'ai réutilisé les dictionnaires précédents et j'ai pour chaque caractères divisé son nombre d'occurence par le nombre de caractères composant le fichier.
+2. J'ai réutilisé les dictionnaires précédents et j'ai, pour chaque caractères, divisé son nombre d'occurrences par le nombre de caractères contenus dans le fichier.
 ___
 exemple de résultat : 
 ```js
@@ -23,8 +23,8 @@ autre : {' ': 0.16616453259687003, '.': 0.009373169302870533, '’': 0.013222863
 ```
 ___
 3. Avec une fonction permettant de calculer l'entropie, j'estime que l'alphabet français a une entropie de `4.388025563021607`.
-4. Le fichier est composé de `23898` caractères, ces derniers sont encodés sur 8 bits. Donc le fichier fait à peu près `24 ko`. En suivant l'entropie, il devrait être possible d'obtenir ce texte avec une taille de fichier de `13.14 ko`.
+4. Le fichier est composé de `23898` caractères, chaque caractère est encodé sur 8 bits. Donc le fichier fait à peu près `24 ko`. En suivant l'entropie, ce texte pourrait théoriquement être compressé jusqu’à une taille de `13.14 ko`.
 ___
 ### 2. Entropie d'une image
-1. En réutilisant la même logique qu'au point 1, j'ai calculé pour l'image `lena_gray.raw` une entropie de `7.445483820875772`.
-2. L'entropie de l'image est bien plus élevée que celle du texte. Cependant, l'image est en 2 dimensions alors que le texte ne l'est pas. De ce fait, il faut diviser par 2 l'entropie de l'image, ce qui donne une entropie de `3.72274191044`. Donc l'entropie de l'image est plus basse que celle du texte.
+1. En appliquant la même méthode que précédemment, j'ai calculé pour l'image `lena_gray.raw` une entropie de `7.445483820875772`.
+2. L'entropie de l'image est bien plus élevée que celle du texte. Cependant, l'image est en 2 dimensions alors que le texte ne l'est pas. De ce fait, il faut diviser par 2 l'entropie de l'image, ce qui donne une entropie de `3.72274191044`. L’entropie de l’image ainsi calculée est donc inférieure à celle du texte.
