@@ -28,7 +28,7 @@ ___
 
 ___
 
-Donc le taux de compression est de 55%.
+Donc le taux de compression est de 189%.
 
 ### 2. Construire un codeur de Huffman - Image
 
@@ -41,4 +41,4 @@ ___
 
 ___
 
-Cela nous donne un code très efficace parce que la taille moyenne du code trouvé est très proche de l'entropie du fichier original.
+Cela nous donne un code très efficace parce que la taille moyenne du code trouvé est très proche de l'entropie du fichier original. Le taux de compression sera lui assez faible parce que l'on va passer en moyenne de 8 bits à 7.46 bits pour encoder l'information.
