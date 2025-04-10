@@ -19,7 +19,7 @@ ___
 ```
 ___
 3. Pour calculer la taille moyenne du codeur,  il faut additionner la taille du code multiplié par sa probabilité d'apparition, de chaque clé. Avec le fichier `exemple1.txt` ça donne un code avec une taille moyenne de `4.420537283454683`.
-4. Pour se faire, j'ai construit mon code et j'ai remplacé chaque caractère ascii par son équivalent dans mon code. Ensuite cette suite de valeur binaire est écrite dans un nouveau fichier. La fonction est disponible dans le fichier `txt.py`. 
+4. Pour se faire, j'ai construit mon code et j'ai remplacé chaque caractère ascii par son équivalent dans mon code. Ensuite cette suite de valeur binaire est écrite dans un nouveau fichier. La fonction est disponible dans le fichier [txt.py](./txt.py). 
 5. Afin d'obtenir le taux de compression, il faut diviser l'entropie de X avec la taille moyenne du code obtenu avec l'algorithme de Huffman. Pour rappel, dans le TP1, on a déterminé que l'entropie du texte est de `4.388025563021607`.
 
 ___
@@ -32,7 +32,7 @@ Donc le taux de compression est de 189%.
 
 ### 2. Construire un codeur de Huffman - Image
 
-5. Vous pouvez retrouver le programme dans le fichier `img.py`. J'ai réutiliser le programme de la partie 1 en l'adaptant afin qu'il utilise un alphabet compris entre [0-255] plutôt que l'alphabet français.
+5. Vous pouvez retrouver le programme dans le fichier [img.py](./img.py). J'ai réutiliser le programme de la partie 1 en l'adaptant afin qu'il utilise un alphabet compris entre [0-255] plutôt que l'alphabet français.
 6. Pour rappel dans le TP1, on a déterminé que l'entropie de l'image est de `7.445483820875772`. Avec notre programme, on a trouvé une taille moyenne de code pour l'image de `7.468183638825841`. 
 
 ___
