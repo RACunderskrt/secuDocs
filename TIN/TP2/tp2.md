@@ -5,7 +5,7 @@
 1. Vous pouvez retrouver le programme dans le fichier `txt.py`. Pour se faire, j'ai créer une classe `Arbre` afin de modéliser un arbre binaire puis j'ai composé cet arbre avec chaque lettre possible en tant que feuille et le chemin entre la racine jusqu'au feuille en tant que code pour chaque caractère.
 ___
 **Codes :**
-```json
+```js
 {'v': '000000', 'ç': '000001000000', '«': '000001000001', '»': '000001000010', '1': '0000010000110', 'ï': '0000010000111', 'z': '0000010001', 'R': '00000100100',
  'U': '00000100101', 'C': '0000010011', 'L': '00000101', 'b': '0000011', 'p': '00001', 'r': '0001', 'u': '0010', 'i': '0011', 't': '0100', '’': '010100',
 'x': '01010100', 'S': '0101010100', '-': '0101010101', 'D': '01010101100', 'J': '01010101101', 'Q': '01010101110', 'V': '010101011110', '?': '010101011111',
