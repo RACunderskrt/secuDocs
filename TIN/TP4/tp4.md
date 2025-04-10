@@ -34,7 +34,7 @@ ___
 ```
 _____
 
-5. Grâce au programme présent dans le fichier `txt.py`, on peut déterminer un dictionnaire permettant d'encoder le fichier `exemple1.txt`. Afin de créer les différents codes, j'ai réutilisé l'algorithme d'Huffman que nous avons vu lors du projet 2.
+5. Grâce au programme présent dans le fichier [txt.py](./txt.py), on peut déterminer un dictionnaire permettant d'encoder le fichier `exemple1.txt`. Afin de créer les différents codes, j'ai réutilisé l'algorithme d'Huffman que nous avons vu lors du projet 2.
 
 ______
 
@@ -65,7 +65,7 @@ ____
 
 **Bonus**
 
-J'ai fait un encodeur avec cette méthode, ce qui m'a permi d'obtenir un taux de compression supérieur à celui vu lors du projet 2 au maximum. Ce taux de compression augmente avec le nombre de trigramme qui sont pris en compte. Ce code est aussi présent dans `txt.py`.
+J'ai fait un encodeur avec cette méthode, ce qui m'a permi d'obtenir un taux de compression supérieur à celui vu lors du projet 2 au maximum. Ce taux de compression augmente avec le nombre de trigramme qui sont pris en compte. Ce code est aussi présent dans [txt.py](./txt.py).
 
 ___
 
