@@ -12,7 +12,7 @@
 
 # TNI
 > ## Projets
->> [1. Estimation de l'entropie](./TDs/Nmap/td1.md) <br>
->> [2. Codeur de Huffman](./TDs/Burp/td2.md) <br>
->> [4. Codage par digrammes](./TDs/SQLMap/td3.md) <br>
+>> [1. Estimation de l'entropie](./TIN/TP1/tp1.md) <br>
+>> [2. Codeur de Huffman](./TIN/TP2/tp2.md) <br>
+>> [4. Codage par digrammes](./TIN/TP4/tp4.md) <br>
 
