@@ -36,7 +36,7 @@ Donc le taux de compression est de 189%.
 
 ### 2. Construire un codeur de Huffman - Image
 
-5. Vous pouvez retrouver le programme dans le fichier [img.py](./img.py). J'ai réutiliser le programme de la partie 1 en l'adaptant afin qu'il utilise un alphabet compris entre [0-255] plutôt que l'alphabet français.
+5. Vous pouvez retrouver le programme dans le fichier [img.py](./img.py). J'ai réutilisé le programme de la partie 1 en l'adaptant afin qu'il utilise un alphabet compris entre [0-255] plutôt que l'alphabet français.
 6. Pour rappel dans le TP1, on a déterminé que l'entropie de l'image est de `7.445483820875772`. Avec notre programme, on a trouvé une taille moyenne de code pour l'image de `7.468183638825841`. 
 
 ___
