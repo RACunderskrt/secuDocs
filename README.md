@@ -16,3 +16,7 @@
 >> [2. Codeur de Huffman](./TIN/TP2/tp2.md) <br>
 >> [4. Codage par digrammes](./TIN/TP4/tp4.md) <br>
 
+# GIT
+> ## Révisions
+>> [Cours vite fait](./git.md) <br>
+
