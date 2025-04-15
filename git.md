@@ -141,3 +141,24 @@ git log --oneline --all --graph
 Historique avec graph visuel
 
 ---
+
+## Diff
+```bash
+git diff
+```
+Montre les différences entre l'index et le répertoire de travail.
+Si tu add les modifs, ça s'affiche plus du coup.
+```bash
+git diff --staged
+```
+Montre les différences entre l'index et la BDO.
+
+## Restore
+```bash
+git restore nom_fichier
+```
+les modifications présents dans le fichier sont supprimées. il reprend la version présent dans la BDO.
+```bash
+git restore --staged nom_fichier
+```
+Enlève le fichier de l'index, donc du prochain commit.
