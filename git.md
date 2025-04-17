@@ -170,11 +170,10 @@ Plutôt que d'utiliser l'ID du commit, qui est chiant à connaître, on peut uti
 git diff HEAD HEAD~1
 ```
 Avec le char `~n`, on remonte de n commit à partir de HEAD.
-Sauf lorsqu'on a des merge-commits on a 2 parents.
 ```bash
 git diff HEAD HEAD~1^2
 ```
-Avec le char `^x (x étant compris entre 1 et 2)` permet de définir l'historique parent que l'on souhaite suivre.
+Mais si on a un merge-commit, il y a 2 parents, du coup c'est chiant d'avoir l'historique. Avec le char `^x (x étant compris entre 1 et 2)` permet de définir l'historique parent que l'on souhaite suivre.
 A noter que si tu mets rien, ça utilise la branche 1 par défaut.
 *ID du commit*:
 Dans un git log, on peut retrouver l'ID de nos commit mais on peut aussi utiliser :
