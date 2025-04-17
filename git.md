@@ -120,6 +120,10 @@ git commit
 ```bash
 git branch --delete nom_branche
 ```
+### Renommer une branche  
+```bash
+git branch --move nom_branche_avant nom_branche_apres
+```
 
 ---
 
@@ -153,6 +157,32 @@ git diff --staged
 ```
 Montre les différences entre l'index et la BDO.
 
+### HEAD
+HEAD est le commit vers lequel on se trouve là mtn.
+La commande diff peut demander 2 commits pour les comparer entre eux.
+```bash
+git diff commit1 commit2
+```
+Pour écrire commit1 et commit2, on peut utiliser 2 moyens, l'ID du commit ou sa référence vis-à-vis de HEAD.
+*HEAD*:
+Plutôt que d'utiliser l'ID du commit, qui est chiant à connaître, on peut utiliser la notation HEAD.
+```bash
+git diff HEAD HEAD~1
+```
+Avec le char `~n`, on remonte de n commit à partir de HEAD.
+Sauf lorsqu'on a des merge-commits on a 2 parents.
+```bash
+git diff HEAD HEAD~1^2
+```
+Avec le char `^x (x étant compris entre 1 et 2)` permet de définir l'historique parent que l'on souhaite suivre.
+A noter que si tu mets rien, ça utilise la branche 1 par défaut.
+*ID du commit*:
+Dans un git log, on peut retrouver l'ID de nos commit mais on peut aussi utiliser :
+```bash
+git rev-parse --short HEAD
+git rev-parse --short HEAD~n
+git rev-parse --short HEAD~n^[1-2] 
+```
 ## Restore
 ```bash
 git restore nom_fichier
