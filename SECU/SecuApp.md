@@ -4,13 +4,13 @@
 Afin de rassembler et sécuriser nos différents services, nous avons utilisé Kubernetes. C'est un outil qui permet d'orchestrer des conteneurs afin de faciliter le déploiement, de gérer les charges ou de sécuriser la communication entre nos services.
 
 ### Pods  
----
+___
 Pour qu'il y ait de la redondance et ainsi assurer la disponibilité de nos services, nous avons mis en place des *deployments*. Sur Kubernetes, les *deployments* permettent de déployer plusieurs pods d'un même service afin d'assurer que le service soit toujours accessible. Par exemple, si on choisit de déployer 3 pods (A, B et C), si le pod A tombe alors Kubernetes le redémarrera automatiquement et ce sont les pods B et C qui prendront la charge.
 
 ![pods](./images/pods.png)
 
 ### Volumes  
----
+___
 Notre application possède une base de données. Cependant, les pods Kubernetes ont comme particularité d'être sans état, ce qui évidemment pose souci lorsque l'on souhaite conserver des données. Pour ce faire, il faut créer un *volume* qui sera un emplacement mémoire dans lequel seront enregistrées les informations de la base de données. Cet emplacement mémoire est ici de taille fixe, nous avons choisi d'avoir au maximum 1 Go de disponible pour la base de données.  
 Pour que Kubernetes lie ce volume à notre pod, nous avons utilisé un *persistent volume claim* qui alloue un volume selon le tag présent dans le pod.
 
@@ -21,7 +21,7 @@ Pour avoir plusieurs bases de données en parallèle, on peut utiliser *Stateful
 ![stateful](./images/stateful.png)
 
 ### Communication interne 
----
+___
 Maintenant que nous avons nos différents services et bases de données qui fonctionnent dans leur pod respectif, il serait intéressant qu'ils puissent communiquer entre eux. C'est à ça que servent les *services* sur Kubernetes avec l'utilisation de *Istio*. Ils permettent de rediriger les ports des pods vers les ports du réseau interne du namespace Kubernetes.
 
 ![service](./images/service.png)
@@ -37,7 +37,7 @@ Suite à quelques modifications et à l'utilisation du DNS interne de Kubernetes
 ![nginx](./images/nginx.png)
 
 ### Accès à l'extérieur  
----
+___
 **Ingress**  
 Pour l'instant, les pods peuvent communiquer entre eux mais il n'y a aucune porte de sortie pour qu'on y accède. C'est pour cela que nous avons mis en place une *gateway* et une *httproute* afin de pouvoir rediriger les informations, les sécuriser et les transmettre vers l'extérieur grâce à l'API *Ingress* de Kubernetes.  
 Pour sécuriser nos transactions, nous avons mis en place une communication https avec l'utilisation de certificats *Let's Encrypt*. Ces certificats ne doivent pas être utilisés lors d'une mise en production mais, dans un contexte de débogage ou éducatif, ils feront très bien l'affaire.  
