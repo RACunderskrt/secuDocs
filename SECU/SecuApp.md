@@ -25,6 +25,8 @@ Voici les seules communications autorisée au sein de notre namespace.
 
 ![policie](./images/policie.png)
 
+Lors de nos tests, on a dû rendre accessible l'API via l'extérieur après un problème technique. Il n'est pas conseillé d'ouvrir une API sur le web car cela représente une vulnérabilité supplémentaire que les hackers peuvent exploiter.
+
 ### Accès à l'extérieur
 ingress
 Pour l'instant, les pods peuvent communiquer entre eux mais il n'y a aucune porte de sortie pour qu'on y accède. C'est pour cela que nous avons mis en place une *gateway* et une *httproute* afin de pouvoir rediriger les informations, les sécuriser et les transmettre vers l'extérieur grâce à l'API *ingress* de Kubernetes.
