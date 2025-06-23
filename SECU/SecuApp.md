@@ -39,8 +39,9 @@ Suite à quelques modifications et à l'utilisation du DNS interne de Kubernetes
 ### Accès à l'extérieur  
 ___
 **Ingress**  
-Pour l'instant, les pods peuvent communiquer entre eux mais il n'y a aucune porte de sortie pour qu'on y accède. C'est pour cela que nous avons mis en place une *gateway* et une *httproute* afin de pouvoir rediriger les informations, les sécuriser et les transmettre vers l'extérieur grâce à l'API *Ingress* de Kubernetes.  
+Pour l'instant, les pods peuvent communiquer entre eux mais il n'y a aucune porte de sortie pour qu'on y accède. C'est pour cela que nous avons mis en place une *gateway*, une *httproute* et une *tcproute* afin de pouvoir rediriger les informations, les sécuriser et les transmettre vers l'extérieur grâce à l'API *Ingress* de Kubernetes.
 Pour sécuriser nos transactions, nous avons mis en place une communication https avec l'utilisation de certificats *Let's Encrypt*. Ces certificats ne doivent pas être utilisés lors d'une mise en production mais, dans un contexte de débogage ou éducatif, ils feront très bien l'affaire.  
 Depuis l'extérieur, les seuls services autorisés à sortir par la gateway sont l'IHM et le serveur. L'API et la BDD restent inaccessibles afin d'éviter toute fuite ou tentative d'atteinte à leur disponibilité.
+
 
 ![global](./images/global.png)
