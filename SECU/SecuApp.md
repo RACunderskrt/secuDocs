@@ -1,6 +1,4 @@
 # Sécurité applicative
-## Sommaire
-[2. Kubrenetes](#kubernetes)
  
 ## Kubernetes
 Afin de rassembler et sécuriser nos différents services, nous avons utiliser Kubernetes. C'est un outil qui permet d'orchestrer des conteneurs afin de faciliter le déploiement, gérer les charges ou de sécuriser la communication entre nos services.
