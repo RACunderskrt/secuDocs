@@ -26,6 +26,6 @@
 
 # ANSIBLE
 > ## TP
->> [Challenge 1 à 5](./Ansible/TP_1.md) <br>
->> [Challenge 6 à 7](./Ansible/Tp_2.md) <br>
+>> [Challenge 1 à 4](./Ansible/TP_1.md) <br>
+>> [Challenge 5 à 7](./Ansible/Tp_2.md) <br>
 
