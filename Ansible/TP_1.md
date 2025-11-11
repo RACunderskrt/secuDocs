@@ -24,15 +24,15 @@ En arrivant sur la machine, on execute automatiquement `sudo apt update` pour me
 
 ![challenge0103](./images/challenge0103.png)
 
-Pour rechercher quelle est le bon paquet à choisir pour installe ansible on utlise la commande `apt-cache search ansible -n`.
+Pour rechercher quel est le bon paquet à choisir pour installe ansible on utlise la commande `apt-cache search ansible -n`.
 
 ![challenge0104](./images/challenge0104.png)
 
-Après avoir trouver le bon paquet ont l'instale avec la commande `sudo apt install ansible -y`
+Après avoir trouver le bon paquet ont l'installe avec la commande `sudo apt install ansible -y`
 
 ![challenge0105](./images/challenge0105.png)
 
-Ensuite pour être sure que ansible est bien installer on peut vérifier sa version avec la commande `ansible --version`
+Ensuite pour être sûr que ansible est bien installé on peut vérifier sa version avec la commande `ansible --version`
 
 ![challenge0106](./images/challenge0106.png)
 
@@ -47,7 +47,7 @@ vagrant@debian:~$ exit
 
 On va reprendre la même façon de créer la machine virtuelle que le challenge.
 
-Avant toute manipulation on verifie la sur quelle distribution nous somment avec la commande `cat /etc/os-release`
+Avant toute manipulation on verifie sur quelle distribution nous somment avec la commande `cat /etc/os-release`
 
 ![challenge0201](./images/challenge0201.png)
 
@@ -55,15 +55,15 @@ Pour ajouter de dépot PPA on utilise la commande suivante `sudo add-apt-reposit
 
 ![challenge0202](./images/challenge0202.png)
 
-Et pour finir comme pour le challenge 1 on verifie la version de asible.
+Et pour finir comme pour le challenge 1 on verifie la version de ansible.
 
-> On note bien ici que la version est 2.17.14 or avec le repo par défaut nous étiosn avec la version 2.14.18
+> On note bien ici que la version est 2.17.14 or avec le repo par défaut nous étions avec la version 2.14.18
 
 ![challenge0203](./images/challenge0203.png)
 
 ## Challenge 3
 
-Cette fois nous allons utiliser une machine virtuelle sous rocky donc pour cela nous alons utiliser la commande suivante `vagrant up rocky`
+Cette fois, nous allons utiliser une machine virtuelle sous rocky donc pour cela nous allons utiliser la commande suivante `vagrant up rocky`
 
 ![challenge0301](./images/challenge0301.png)
 
@@ -75,11 +75,11 @@ Pour installer python et pip on utilise la commande suivante `sudo dnf install p
 
 ![challenge0303](./images/challenge0303.png)
 
-Pour être sûr que python est bien installer on utlise la commande suivante `python3 -m pip`
+Pour être sûr que python est bien installé on utlise la commande suivante `python3 -m pip`
 
 ![challenge0304](./images/challenge0304.png)
 
-Pour pouvoir créer l'environement virtuelle et ensuite l'activer on execute les commandes suivantes:
+Pour pouvoir créer l'environement virtuel et ensuite l'activer on execute les commandes suivantes:
 
 ```bash
 [vagrant@rocky ~]$ python3 -m venv ~/.venv/ansible
@@ -91,7 +91,7 @@ Pour pouvoir créer l'environement virtuelle et ensuite l'activer on execute les
 
 ![challenge0305](./images/challenge0305.png)
 
-Avant d'installer ansible on met à jour pip avec la commande suivante `pip install --upgrade pip`
+Avant d'installer ansible, on met à jour pip avec la commande suivante `pip install --upgrade pip`
 
 ![challenge0306](./images/challenge0306.png)
 
@@ -105,19 +105,19 @@ Et pour finir on vérifie la version de ansible installée.
 
 ## Challenge 4
 
-Pour commencer ce challenge on vérifie que toute les machines sont démarrer et prête.
+Pour commencer ce challenge, on vérifie que toute les machines sont démarrées et prêtes.
 
 ![challenge0401](./images/challenge0401.png)
 
-On se connecte sur la machine virtuelle de controle avec la commande `vagrant shh control`
+On se connecte sur la machine virtuelle de contrôle avec la commande `vagrant shh control`
 
 ![challenge0402](./images/challenge0402.png)
 
-Pour que la machine de controle puisse accéder à tout les machines de son inventaire on ajoute les enregistrements nécessaire dans `/etc/hosts`
+Pour que la machine de contrôle puisse accéder à tout les machines de son inventaire on ajoute les enregistrements nécessaire dans `/etc/hosts`
 
 ![challenge0403](./images/challenge0403.png)
 
-Pour tester si tout les ping marchent on utilise la boucle bask suivante `for HOST in rocky debian suse; do ping -c 1 -q $HOST; done`
+Pour tester si tout les pings marchent on utilise la boucle bask suivante `for HOST in rocky debian suse; do ping -c 1 -q $HOST; done`
 
 ![challenge0404](./images/challenge0404.png)
 
@@ -131,7 +131,7 @@ On peut faire le test avant d'appliquer l'authentification avec la commande `ssh
 
 > On note bien que pour le moment le mot de passe est demander à chaque demande de connexion.
 
-En premier on génère une paire de clé SSH avec la commande `ssh-keygen`
+En premier, on génère une paire de clé SSH avec la commande `ssh-keygen`
 
 ![challenge0407](./images/challenge0407.png)
 
