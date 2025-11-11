@@ -4,11 +4,9 @@
 
 Après installation de tout les paquets nécessaire au bon fonctionnement de notre lab voici les resultats des tests.
 
-// ansible01.png
-![proxy](./images/proxy.png)
+![ansible01](./images/ansible01.png)
 
-// ansible02.png
-![proxy](./images/proxy.png)
+![ansible02](./images/ansible02.png)
 
 Cela montre que notre la lab est opérationel et que nous somment prêt à pouvoir faire les challenge.
 
