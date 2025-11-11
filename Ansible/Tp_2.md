@@ -1,17 +1,17 @@
 ## Challenge 5
 
-On commence par éditer le fichier `/etc/host` pour que les target soient accesible par le nom au lieu de leur adresses IP.
+On commence par éditer le fichier `/etc/host` pour que les targets soient accesibles par le nom au lieu de leur adresses IP.
 
 ![challenge0501](./images/challenge0501.png)
 
-Pour mettre en place l'authentifactiojn par clé ssh on reproduit la précdure faite pour le challenge 4.
-Et on obtient le résultat suivant:
+Pour mettre en place l'authentifaction par clé ssh on reproduit la précdure faite pour le challenge 4.
+On obtient le résultat suivant:
 
 ![challenge0502](./images/challenge0502.png)
 
 Pour effectuer le ping ansible on utilise la commande suivante `ansible all -i target01,target02,target03 -u vagrant -m ping`
 
-> On note ici que -i precisse les targets -u precisse l'utilisateur et -m l'action
+> On note ici que -i precise les targets -u precise l'utilisateur et -m la méthode
 
 ![challenge0503](./images/challenge0503.png)
 
@@ -42,7 +42,7 @@ target03
 
 ![challenge0506](./images/challenge0506.png)
 
-Pour ajouter la journalisation il suffit de créer créer le dossier `logs`, le fichier `ansible.log` et d'ajouter cela à `ansible.cfg`
+Pour ajouter la journalisation il suffit de créer le dossier `logs`, le fichier `ansible.log` et d'ajouter cela à `ansible.cfg`
  ```bash
  mkdir logs
  touch logs/ansible.log
@@ -75,7 +75,7 @@ Pour ajouter la journalisation il suffit de créer créer le dossier `logs`, le 
 
  ## Challenge 6
 
- Pour obtenire la place utilisable sur les targets on utilise `ansible all -m command "df -h /" -o`
+ Pour obtenir la place utilisable sur les targets on utilise `ansible all -m command "df -h /" -o`
 
  ![challenge0601](./images/challenge0601.png)
 
@@ -83,11 +83,11 @@ Pour ajouter la journalisation il suffit de créer créer le dossier `logs`, le 
 
  ![challenge0602](./images/challenge0602.png)
 
- Pour afficher un nombre aléatoire venant de chaque targer on utlise `ansible all -m shell -a "echo $RANDOM executable=/bin/bash" -o`
+ Pour afficher un nombre aléatoire venant de chaque target on utlise `ansible all -m shell -a "echo $RANDOM executable=/bin/bash" -o`
 
  ![challenge0603](./images/challenge0603.png)
 
- Maintenant in installe cowsay sur tout les targets `ansible all -m package -a "name=cowsay"`
+ Maintenant on installe cowsay sur tout les targets `ansible all -m package -a "name=cowsay"`
 
  ![challenge0604](./images/challenge0604.png)
 
@@ -109,7 +109,7 @@ Cela donne :
 
 ![challenge0702](./images/challenge0702.png)
 
-> On note que pour le targetO2 la commande affiche success, cela montre que l'utilisateur étais déjà présent donc pas besoin de l'ajouter.
+> On note que pour le targetO2 la commande affiche success, cela montre que l'utilisateur était déjà présent donc pas besoin de l'ajouter.
 
 Pour installer un paquet on utlise le module `package` et ici par exemple nous allons installer git sur les target avec la commande `ansible all -m package -a "name=git"`
 
@@ -119,13 +119,13 @@ On refait la même manipulation avec `tree`, commande `ansible all -m package -a
 
 ![challenge0704](./images/challenge0704.png)
 
-> note que cette fois la sortie brute de la commande est affiché
+> note que cette fois la sortie brute de la commande est affichée
 
 De la même façon on installe nmap:
 
 ![challenge0705](./images/challenge0705.png)
 
-Mais imaginon que l'on veuille supprimer nmap et bien la syntaxe est assez proche il suffit d'ajouter l'agument `state=absent` et cela donne la commmande `ansible all -m package -a "name=nmap state=absent"`
+Mais imaginons que l'on veuille supprimer nmap et bien la syntaxe est assez proche il suffit d'ajouter l'argument `state=absent` et cela donne la commmande `ansible all -m package -a "name=nmap state=absent"`
 
 ![challenge0706](./images/challenge0706.png)
 
