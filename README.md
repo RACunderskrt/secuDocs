@@ -29,3 +29,7 @@
 >> [Challenge 1 à 4](./Ansible/TP_1.md) <br>
 >> [Challenge 5 à 7](./Ansible/Tp_2.md) <br>
 
+# CI/CD
+> ## TP
+>> [Compte rendu](./cicd/compte_rendu.md) <br>
+
