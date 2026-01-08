@@ -33,3 +33,9 @@
 > ## TP
 >> [Compte rendu](./cicd/compte_rendu.md) <br>
 
+# Métrique Logicielle
+> ## Exercices
+> [Exercice 1](./metric/metrics-ex1.md) <br>
+> [Exercice 2](./metric/metrics-ex2.md) <br>
+> [Exercice 3](./metric/metrics-ex3.md) <br>
+
